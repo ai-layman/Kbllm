@@ -1,0 +1,271 @@
+Getting Started (Windows 11)
+1. **Install Python for the coding language of this project - https://www.python.org/downloads/**
+
+2. **Install Visual Studio Code as the source-code editor for this project- https://code.visualstudio.com/download**
+
+3. **Open Visual Studio Code**
+
+4. **Install Python Extension on Visual Studio Code**
+
+![](getting_started_images/vscode_python_extension.png)
+
+  - On the left-hand tab, click on "Extensions"
+
+  - Search for "Python"
+
+  - Click Install
+
+5. **Create a "Projects" folder**
+
+![](getting_started_images/virutal_environment.png)
+
+  - Go to the the File Explorer on your Windows Task Bar (it is the folder icon on your task bar) and click it
+
+  - Click on your hard drive (typically named OS (C:) under "This PC")
+
+  - Double-click on the "Users" folder
+
+  ![](getting_started_images/virutal_environment_2.png)
+
+  - Double-click the folder with your username
+  
+ ![](getting_started_images/virutal_environment_3.png)
+
+  - Right-click on the current window and create a new folder
+
+![](getting_started_images/virutal_environment_4.png)
+
+  - Name the folder "Projects"
+
+![](getting_started_images/virutal_environment_5.png)
+
+  - Click into the newly created "Projects" folder and create a new folder
+
+  - Name the folder "Kbllm"
+
+  - Once the folder is created, right-click it, then left-click on the "Copy as path" option
+
+  - Your path should look something like this: "C:\Users\your name\Projects\Kbllm"
+
+    - "your name" = your user name
+
+  - save this path in a notepad or word doc, because you will be using it to set-up this virtual environment [PATH 1]
+
+6. **Create a Python virtual environment inside the "Projects" folder**
+
+![](getting_started_images/virutal_environment_6.png)
+
+  - Go back to the window where you saved your "Projects" folder, click the "View" button on the top of the window
+
+  - Scroll down to the bottom of the list and click "Show"
+
+  - Scroll down to the bottom of the second list and click "Hidden Items", a folder called "AppData" should now appear in the window
+
+![](getting_started_images/virutal_environment_7.png)
+
+  - Double-click on the "App Data" folder 
+  - then double-click on the "Local" folder
+  - then double-click on the "Programs" folder
+  - then double-click on the "Python" folder
+  - then double-click on the "PythonX" folder (where X is the version of Python you have downloaded)
+
+  - Look for the "python" application, right-click it, then left-click on the "Copy as path" option
+
+  - Your path should look something like this: "C:\Users\"your name"\AppData\Local\Programs\Python\Python3"X"\python.exe"
+
+    - "your name" = your user name
+    - "X" = the version of python you downloaded
+
+  - save this path in a notepad or word doc, because you will be using it to set-up this virtual environment, as well as future virtual environments [PATH 2]
+
+![](getting_started_images/command_prompt.png)
+
+  - Go to the search bar on your Windows Task Bar
+
+  - Search for "Command Prompt"
+
+  - Click Command Prompt
+
+  ![](getting_started_images/command_prompt_2.png)
+
+  - You should now see a window that looks like this
+
+![](getting_started_images/command_prompt_3.png)
+
+  - Type in: cd [Path 1] that you copied in a previous step
+
+    - [Path 1] should look something like this: C:\Users\your name\Projects\Kbllm
+
+    - "your name" = your user name
+
+  - Hit "Enter"
+
+ ![](getting_started_images/command_prompt_4.png)
+
+  - Notice that your main directory in the command prompt has now changed (underlined in red)
+
+  - Type in: [Path 2] -m venv kbllmvenv that you copied in a previous step
+
+    - [Path 2] should look something like this: "C:\Users\"your name"\AppData\Local\Programs\Python\Python3"X"\python.exe"
+
+    - "your name" = your user name
+    - "X" = the version of python you downloaded
+
+  - Hit "Enter"
+
+![](getting_started_images/command_prompt_5.png)
+
+  - If you go back to your File Explorer on your Windows Task Bar (it is the folder icon on your task bar), and go to the Kbllm folder, you will now see the kbllmvenv folder that you just created through the command prompt
+
+  - This is the virtual environment we will be using for this project
+
+7. **Activate your virtual environment "kbllmvenv"**
+
+![](getting_started_images/command_prompt_6.png)
+
+  - Go back to the command prompt, make sure you are in the correct working directory C:\Users\simon\Projects\Kbllm
+
+    - In case you do not have this as your working directory, you can make this the working directory again by typing: cd [Path 1]
+
+  - Type in: .\kbllmvenv\Scripts\activate
+
+  - Hit "Enter"
+
+![](getting_started_images/command_prompt_7.png)
+
+  - Notice that you are now in a new working directory
+
+  - Housekeeping for your virtual environment:
+
+    - DEACTIVATE: In case you want to stop working on your project, you can type "deactivate" then hit "Enter", this will deactivate the virtual environment
+
+    - RETURN TO USER DIRECTORY: You can go back to the original user folder in your command prompt by typing: cd %USERPROFILE% then hit enter
+
+    - REACTIVATE: In case you want to start working on your project again, type: cd [Path 1] then hit "Enter", type: kbllmvenv\Scripts\activate.bat
+
+8. **Update pip in your virtual environment**
+
+![](getting_started_images/command_prompt_8.png)
+
+  - Go to your command prompt window
+
+  - Make sure that your virtual environment is activated
+
+  - type in: C:\Users\your name\Projects\Kbllm\kbllmvenv\Scripts\python.exe
+
+    - "your name" = your user name
+
+  - save this path in a notepad or word doc, because you will be using it to set-up this virtual environment [PATH 3]
+ 
+  - then type: -m pip install --upgrade pip
+
+  - Hit "Enter"
+
+  - You should now see a response "Successfully installed pip-version"
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install python-dotenv
+
+  - Hit "Enter"
+
+  - You should now see a response "Successfully installed pthon-dotenv-version"
+
+9. **Install Python-dotenv to use API Keys**
+
+![](getting_started_images/command_prompt_9.png)
+
+  - Make sure that your virtual environment is activated
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install python-dotenv
+
+  - Hit "Enter"
+
+  - You should now see a response "Successfully installed pthon-dotenv-version"
+
+10. **Install langchain for the AI Framework**
+
+![](getting_started_images/command_prompt_10.png)
+
+  - Make sure that your virtual environment is activated
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install langchain
+
+![](getting_started_images/command_prompt_11.png)
+
+  - If everything worked, you should see a response in the window that looks like the this
+
+11. **Install OpenAI Software Development Kit (SDK) to use as the AI**
+
+![](getting_started_images/command_prompt_12.png)
+
+  - Make sure that your virtual environment is activated
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install openai
+
+![](getting_started_images/command_prompt_13.png)
+
+  - If everything worked, you should see a response in the window that looks like this
+
+11. b. **Install tiktoken for OpenAI Embeddings**
+
+![](getting_started_images/command_prompt_12b.png)
+
+  - Make sure that your virtual environment is activated
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install tiktoken
+
+![](getting_started_images/command_prompt_13b.png)
+
+  - If everything worked, you should see a response in the window that looks like this
+
+12. **Install Pinecone for Index Creation**
+
+![](getting_started_images/command_prompt_14.png)
+
+  - Make sure that your virtual environment is activated
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install pinecone-client
+
+![](getting_started_images/command_prompt_15.png)
+
+  - If everything worked, you should see a response in the window that looks like this
+
+13. **You have successfully installed all packages required for this project, you may now close out of the command prompt**
+
+14. **Create your OpenAI API Key** 
+
+  - Create an account with OpenAI if you have not done so already. Go to "https://chat.openai.com/"
+
+  - Set-up billing with OpenAI if you have not done so already. Go to "https://platform.openai.com/account/billing/overview" in order to use OpenAI's API
+  
+    - Go to "https://platform.openai.com/account/api-keys"
+
+    - Click "Create New Secret Key"
+
+    - A new window should open, name your secret key, you can name whatever you like
+
+    - Click "Create Secret Key"
+
+    - Copy the secret key and store it in a safe place on your computer
+
+15. **Create your Pinecone Index; copy and store your Index Name, API Key, and Environment**
+
+ - Create an account with Pinecone if you have not done so already. Go to "https://www.pinecone.io/"
+
+ - On the dashboard click "Create Index" on the upper right-hand of your screen
+
+   - A new window should open, give your index a name, you can name whatever you like
+
+   - Dimensions = 1536
+
+   - Metric = cosine
+
+   - Pod Type = P1 Faster Queries
+  
+  - Once the Index is created, copy the Index name and store it in a safe place on your computer
+  
+  - Click on the "API Keys"
+
+    - Go to the Actions section on the right side of your screen, click the paper icon to copy your API Key, and store it in a safe place on your computer
+
+    - Copy the text underneath the word "Environment" and store it in a safe place on your computer
+
