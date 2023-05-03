@@ -9,7 +9,6 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
 import requests
 
-# Use localknowledgebase folder
 def load_data():
     # Get a list of all PDF files in localknowledgebase folder
     pdf_files = [f for f in os.listdir("./localknowledgebase") if f.lower().endswith(".pdf")]
@@ -26,15 +25,17 @@ def load_data():
         data = loader.load()
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
         splitted_data = text_splitter.split_documents(data)
-        all_data.extend([TextChunk(page_content=text, source=pdf_file) for text in splitted_data])
+        all_data.extend([TextChunk(page_content=text, source=pdf_file, metadata={"source": pdf_file}) for text in splitted_data])
 
     texts = all_data
+    return texts
 
 # Create metadata for Answering with Sources
 class TextChunk:
-    def __init__(self, page_content, source):
+    def __init__(self, page_content, source, metadata=None):
         self.page_content = page_content
         self.source = source
+        self.metadata = metadata
 
 # Check if the index is ready every 300 seconds
 def wait_for_index_creation(pinecone_client, index_name):
@@ -98,20 +99,17 @@ def main():
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Pinecone initialized.")
 
     # Check if index already exists
-if index_name not in pinecone.list_indexes():
-    pinecone.create_index(index_name, dimension=embeddings.dimension)
-    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Creating index: {index_name}")
-    wait_for_index_creation(pinecone, index_name)
+    if index_name not in pinecone.list_indexes():
+        pinecone.create_index(index_name, dimension=embeddings.dimension)
+        print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Creating index: {index_name}")
+        wait_for_index_creation(pinecone, index_name)
     else:
         # Update the index with new text, embeddings, and metadata
         print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Updating index with new texts, embeddings, and metadata...")
-        docsearch = Pinecone.from_texts(texts=[t.page_content for t in texts], embedding=embeddings, metadatas=metadatas, index_name=index_name)
+        docsearch = Pinecone.from_texts(texts=[t.page_content for t in texts], embedding=embeddings, metadatas=[t.metadata for t in texts], index_name=index_name)
         print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Updated index with {len(texts)} documents")
 
-print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Index created/updated and embeddings stored. You can now run query.py to perform semantic search.")
+    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Index created/updated and embeddings stored. You can now run query.py to perform semantic search.")
 
 if __name__ == "__main__":
     main()
-
-
-

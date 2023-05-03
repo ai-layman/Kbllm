@@ -205,15 +205,27 @@ Getting Started (Windows 11)
 
   - If everything worked, you should see a response in the window that looks like this
 
-11. b. **Install tiktoken for OpenAI Embeddings**
+11. b. **Install PyPDF for PDF Loading and Metadata creation**
 
 ![](getting_started_images/command_prompt_12b.png)
 
   - Make sure that your virtual environment is activated
 
-  - Go back to your command prompt window and then type in: [Path 3] -m pip install tiktoken
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install pypdf
 
 ![](getting_started_images/command_prompt_13b.png)
+
+  - If everything worked, you should see a response in the window that looks like this
+
+11. c. **Install tiktoken for OpenAI Embeddings**
+
+![](getting_started_images/command_prompt_12c.png)
+
+  - Make sure that your virtual environment is activated
+
+  - Go back to your command prompt window and then type in: [Path 3] -m pip install tiktoken
+
+![](getting_started_images/command_prompt_13c.png)
 
   - If everything worked, you should see a response in the window that looks like this
 
