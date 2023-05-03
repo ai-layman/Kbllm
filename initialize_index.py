@@ -2,12 +2,11 @@ import os
 import sys
 import time
 from dotenv import load_dotenv
-from langchain.document_loaders import PDFMinerLoader
+from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
-import requests
 
 def load_data():
     # Get a list of all PDF files in localknowledgebase folder
@@ -17,25 +16,15 @@ def load_data():
         print("No PDF files found in the localknowledgebase folder.")
         sys.exit(1)
 
-    all_data = []
+    texts = []
 
     # Load all PDF files found in localknowledgebase folder
     for pdf_file in pdf_files:
-        loader = PDFMinerLoader(f"./localknowledgebase/{pdf_file}")
-        data = loader.load()
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-        splitted_data = text_splitter.split_documents(data)
-        all_data.extend([TextChunk(page_content=text, source=pdf_file, metadata={"source": pdf_file}) for text in splitted_data])
+        loader = PyPDFLoader(os.path.join("./localknowledgebase", pdf_file))
+        pages = loader.load_and_split()
+        texts.extend(pages)
 
-    texts = all_data
     return texts
-
-# Create metadata for Answering with Sources
-class TextChunk:
-    def __init__(self, page_content, source, metadata=None):
-        self.page_content = page_content
-        self.source = source
-        self.metadata = metadata
 
 # Check if the index is ready every 300 seconds
 def wait_for_index_creation(pinecone_client, index_name):
@@ -55,13 +44,13 @@ def main():
 
     # Load data
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Loading data...")
-    data = load_data()
+    pages = load_data()
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Data loaded.")
 
     # Chunk data up into smaller documents
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Splitting data into smaller documents...")
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-    texts = text_splitter.split_documents(data)
+    texts = text_splitter.split_documents(pages)
 
     # Show the total number of documents
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Now you have {len(texts)} documents")
@@ -77,11 +66,6 @@ def main():
     if user_input != 'y':
         print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Aborting process.")
         sys.exit(0)
-
-    # Prepare metadata to include the source
-    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Creating metadata...")
-    metadatas = [{"source": t.source} for t in texts]
-    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Embeddings created.")
 
     # Create embeddings of documents to get ready for semantic search
     print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Creating embeddings...")
@@ -102,7 +86,7 @@ def main():
     if index_name not in pinecone.list_indexes():
         pinecone.create_index(index_name, dimension=embeddings.dimension)
         print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Creating index: {index_name}")
-        wait_for_index_creation(pinecone, index_name)
+        wait_for_index_creation(pinecone_client, index_name)
     else:
         # Update the index with new text, embeddings, and metadata
         print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Updating index with new texts, embeddings, and metadata...")
