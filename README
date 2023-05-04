@@ -7,7 +7,7 @@ Getting Started (Windows 11)
 
 4. **Install Python Extension on Visual Studio Code**
 
-![](getting_started_images/vscode_python_extension.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/vscode_python_extension.png)
 
   - On the left-hand tab, click on "Extensions"
 
@@ -17,7 +17,7 @@ Getting Started (Windows 11)
 
 5. **Create a "Projects" folder**
 
-![](getting_started_images/virutal_environment.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment.png)
 
   - Go to the the File Explorer on your Windows Task Bar (it is the folder icon on your task bar) and click it
 
@@ -25,19 +25,19 @@ Getting Started (Windows 11)
 
   - Double-click on the "Users" folder
 
-  ![](getting_started_images/virutal_environment_2.png)
+  ![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment_2.png)
 
   - Double-click the folder with your username
   
- ![](getting_started_images/virutal_environment_3.png)
+ ![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment_3.png)
 
   - Right-click on the current window and create a new folder
 
-![](getting_started_images/virutal_environment_4.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment_4.png)
 
   - Name the folder "Projects"
 
-![](getting_started_images/virutal_environment_5.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment_5.png)
 
   - Click into the newly created "Projects" folder and create a new folder
 
@@ -53,7 +53,7 @@ Getting Started (Windows 11)
 
 6. **Create a Python virtual environment inside the "Projects" folder**
 
-![](getting_started_images/virutal_environment_6.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment_6.png)
 
   - Go back to the window where you saved your "Projects" folder, click the "View" button on the top of the window
 
@@ -61,7 +61,7 @@ Getting Started (Windows 11)
 
   - Scroll down to the bottom of the second list and click "Hidden Items", a folder called "AppData" should now appear in the window
 
-![](getting_started_images/virutal_environment_7.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/virutal_environment_7.png)
 
   - Double-click on the "App Data" folder 
   - then double-click on the "Local" folder
@@ -78,7 +78,7 @@ Getting Started (Windows 11)
 
   - save this path in a notepad or word doc, because you will be using it to set-up this virtual environment, as well as future virtual environments [PATH 2]
 
-![](getting_started_images/command_prompt.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt.png)
 
   - Go to the search bar on your Windows Task Bar
 
@@ -86,11 +86,11 @@ Getting Started (Windows 11)
 
   - Click Command Prompt
 
-  ![](getting_started_images/command_prompt_2.png)
+  ![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_2.png)
 
   - You should now see a window that looks like this
 
-![](getting_started_images/command_prompt_3.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_3.png)
 
   - Type in: cd [Path 1] that you copied in a previous step
 
@@ -100,7 +100,7 @@ Getting Started (Windows 11)
 
   - Hit "Enter"
 
- ![](getting_started_images/command_prompt_4.png)
+ ![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_4.png)
 
   - Notice that your main directory in the command prompt has now changed (underlined in red)
 
@@ -113,7 +113,7 @@ Getting Started (Windows 11)
 
   - Hit "Enter"
 
-![](getting_started_images/command_prompt_5.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_5.png)
 
   - If you go back to your File Explorer on your Windows Task Bar (it is the folder icon on your task bar), and go to the Kbllm folder, you will now see the kbllmvenv folder that you just created through the command prompt
 
@@ -121,7 +121,7 @@ Getting Started (Windows 11)
 
 7. **Activate your virtual environment "kbllmvenv"**
 
-![](getting_started_images/command_prompt_6.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_6.png)
 
   - Go back to the command prompt, make sure you are in the correct working directory C:\Users\simon\Projects\Kbllm
 
@@ -131,7 +131,7 @@ Getting Started (Windows 11)
 
   - Hit "Enter"
 
-![](getting_started_images/command_prompt_7.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_7.png)
 
   - Notice that you are now in a new working directory
 
@@ -145,7 +145,7 @@ Getting Started (Windows 11)
 
 8. **Update pip in your virtual environment**
 
-![](getting_started_images/command_prompt_8.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_8.png)
 
   - Go to your command prompt window
 
@@ -171,7 +171,7 @@ Getting Started (Windows 11)
 
 9. **Install Python-dotenv to use API Keys**
 
-![](getting_started_images/command_prompt_9.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_9.png)
 
   - Make sure that your virtual environment is activated
 
@@ -183,61 +183,61 @@ Getting Started (Windows 11)
 
 10. **Install langchain for the AI Framework**
 
-![](getting_started_images/command_prompt_10.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_10.png)
 
   - Make sure that your virtual environment is activated
 
   - Go back to your command prompt window and then type in: [Path 3] -m pip install langchain
 
-![](getting_started_images/command_prompt_11.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_11.png)
 
   - If everything worked, you should see a response in the window that looks like the this
 
 11. **Install OpenAI Software Development Kit (SDK) to use as the AI**
 
-![](getting_started_images/command_prompt_12.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_12.png)
 
   - Make sure that your virtual environment is activated
 
   - Go back to your command prompt window and then type in: [Path 3] -m pip install openai
 
-![](getting_started_images/command_prompt_13.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_13.png)
 
   - If everything worked, you should see a response in the window that looks like this
 
 11. b. **Install PyPDF for PDF Loading and Metadata creation**
 
-![](getting_started_images/command_prompt_12b.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_12b.png)
 
   - Make sure that your virtual environment is activated
 
   - Go back to your command prompt window and then type in: [Path 3] -m pip install pypdf
 
-![](getting_started_images/command_prompt_13b.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_13b.png)
 
   - If everything worked, you should see a response in the window that looks like this
 
 11. c. **Install tiktoken for OpenAI Embeddings**
 
-![](getting_started_images/command_prompt_12c.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_12c.png)
 
   - Make sure that your virtual environment is activated
 
   - Go back to your command prompt window and then type in: [Path 3] -m pip install tiktoken
 
-![](getting_started_images/command_prompt_13c.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_13c.png)
 
   - If everything worked, you should see a response in the window that looks like this
 
 12. **Install Pinecone for Index Creation**
 
-![](getting_started_images/command_prompt_14.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_14.png)
 
   - Make sure that your virtual environment is activated
 
   - Go back to your command prompt window and then type in: [Path 3] -m pip install pinecone-client
 
-![](getting_started_images/command_prompt_15.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/command_prompt_15.png)
 
   - If everything worked, you should see a response in the window that looks like this
 
@@ -283,7 +283,7 @@ Getting Started (Windows 11)
 
 16. **Download the Kbllm Code from Github**
 
-![](getting_started_images/Github_Download.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/Github_Download.png)
 
   - Go to: https://github.com/ai-layman/Kbllmtest
 
@@ -291,7 +291,7 @@ Getting Started (Windows 11)
 
   - Click Download Zip
 
-![](getting_started_images/Github_Download_2.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/Github_Download_2.png)
 
   - Go to your File Explorer and click on "Downloads"
 
@@ -299,7 +299,7 @@ Getting Started (Windows 11)
 
   - Left-click on cut
 
-![](getting_started_images/Github_Download_3.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/Github_Download_3.png)
 
   - Paste the files in your Kbllm folder which you saved under C:\Users\your name\Projects\Kbllm
 
@@ -307,11 +307,11 @@ Getting Started (Windows 11)
 
 17. **Open the project on VS Code**
 
-![](getting_started_images/vscode_run.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/vscode_run.png)
 
   - Go to File > Open Folder > Kbllm
   
-![](getting_started_images/vscode_run_2.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/vscode_run_2.png)
 
   - Go to the .env.sample
 
@@ -319,7 +319,7 @@ Getting Started (Windows 11)
     - Enter the PINECONE API KEY, PINECONE API ENV, INDEX NAME you copied and stored in a safe place in step 15
     - rename the file from .env.sample to .env
 
-![](getting_started_images/vscode_run_3.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/vscode_run_3.png)
 
   - Go to the initialize_index.py and run the file by pressing the play button on the upper-right corner of the VS Code Window
 
@@ -329,7 +329,7 @@ Getting Started (Windows 11)
 
     - You may now kill the terminal by pressing the trash can icon
 
-![](getting_started_images/vscode_run_4.png)
+![](https://raw.githubusercontent.com/ai-layman/Kbllmtest/master/getting_started_images/vscode_run_4.png)
 
   - Go to the query.py and run the file by pressing the play button on the upper-right corner of the VS Code Window
 
