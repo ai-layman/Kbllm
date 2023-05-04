@@ -152,9 +152,6 @@ def main():
     chatbox_ui = ChatBoxUI(docsearch, chain, embeddings)
     chatbox_ui.mainloop()
 
-    # Deinitialize Pinecone
-    pinecone.deinit()
-
 if __name__ == "__main__":
     main()
 

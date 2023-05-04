@@ -1,7 +1,7 @@
 Getting Started (Windows 11)
-1. **Install Python for the coding language of this project - https://www.python.org/downloads/**
+1. **Install Python for the coding language of this project: https://www.python.org/downloads/**
 
-2. **Install Visual Studio Code as the source-code editor for this project- https://code.visualstudio.com/download**
+2. **Install Visual Studio Code as the source-code editor for this project: https://code.visualstudio.com/download**
 
 3. **Open Visual Studio Code**
 
@@ -281,3 +281,60 @@ Getting Started (Windows 11)
 
     - Copy the text underneath the word "Environment" and store it in a safe place on your computer
 
+16. **Download the Kbllm Code from Github**
+
+![](getting_started_images/Github_Download.png)
+
+  - Go to: https://github.com/ai-layman/Kbllmtest
+
+  - On the upper right-hand side of the screen, click the green button that says "<> Code"
+
+  - Click Download Zip
+
+![](getting_started_images/Github_Download_2.png)
+
+  - Go to your File Explorer and click on "Downloads"
+
+  - Select all the files and then right-click
+
+  - Left-click on cut
+
+![](getting_started_images/Github_Download_3.png)
+
+  - Paste the files in your Kbllm folder which you saved under C:\Users\your name\Projects\Kbllm
+
+    - "your name" = your user name
+
+17. **Open the project on VS Code**
+
+![](getting_started_images/vscode_run.png)
+
+  - Go to File > Open Folder > Kbllm
+  
+![](getting_started_images/vscode_run_2.png)
+
+  - Go to the .env.sample
+
+    - Enter the OPENAI API KEY you copied and stored in a safe place in step 14
+    - Enter the PINECONE API KEY, PINECONE API ENV, INDEX NAME you copied and stored in a safe place in step 15
+    - rename the file from .env.sample to .env
+
+![](getting_started_images/vscode_run_3.png)
+
+  - Go to the initialize_index.py and run the file by pressing the play button on the upper-right corner of the VS Code Window
+
+    - If the document previews look correct, press y on your keyboard and then hit "enter"
+
+    - Wait for the system to tell you "Index created/updated and embeddings stored. You can now run query.py to perform semantic search."
+
+    - You may now kill the terminal by pressing the trash can icon
+
+![](getting_started_images/vscode_run_4.png)
+
+  - Go to the query.py and run the file by pressing the play button on the upper-right corner of the VS Code Window
+
+    - A chatbox should appear on your screen
+
+    - Ask the chatbox anything you would like about your knowledge base. Enjoy your own custom AI!
+
+    - Once you are done having fun, you may kill the terminal by pressing the trash can icon
