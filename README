@@ -162,12 +162,6 @@ Getting Started (Windows 11)
 
   - You should now see a response "Successfully installed pip-version"
 
-  - Go back to your command prompt window and then type in: [Path 3] -m pip install python-dotenv
-
-  - Hit "Enter"
-
-  - You should now see a response "Successfully installed pthon-dotenv-version"
-
 9. **Install Python-dotenv to use API Keys**
 
 ![Install dotenv](getting_started_images/command_prompt_9.png)
