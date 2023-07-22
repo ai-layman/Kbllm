@@ -150,7 +150,7 @@ Getting Started (Windows 11)
 
   - Make sure that your virtual environment is activated
 
-  - type in: C:\Users\your name\Projects\Kbllm\kbllmvenv\Scripts\python.exe
+  - type in: .\Kbllm\kbllmvenv\Scripts\python.exe
 
     - "your name" = your user name
 
